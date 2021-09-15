@@ -1,0 +1,3 @@
+[submodule "cmdlines/abseil-cpp"]
+	path = cmdlines/abseil-cpp
+	url = https://github.com/abseil/abseil-cpp

@@ -1,4 +1,4 @@
-/* Copyright 2020 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2020 The NEWPLAN_TOOLKIT Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -13,17 +13,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#ifndef TENSORFLOW_CORE_PLATFORM_BFLOAT16_BFLOAT16_H_
-#define TENSORFLOW_CORE_PLATFORM_BFLOAT16_BFLOAT16_H_
+#ifndef NEWPLAN_TOOLKIT_CORE_PLATFORM_BFLOAT16_BFLOAT16_H_
+#define NEWPLAN_TOOLKIT_CORE_PLATFORM_BFLOAT16_BFLOAT16_H_
 
 // clang-format off
 #include "byte_order.h"
 
 // clang-format on
 
-namespace tensorflow
+namespace newplan_toolkit
 {
-    // typedef Eigen::bfloat16 bfloat16;
     struct bfloat16
     {
         unsigned short int data;
@@ -46,6 +45,6 @@ namespace tensorflow
             return *this;
         }
     };
-} // end namespace tensorflow
+} // namespace newplan_toolkit
 
-#endif // TENSORFLOW_CORE_LIB_BFLOAT16_BFLOAT16_H_
+#endif // NEWPLAN_TOOLKIT_CORE_LIB_BFLOAT16_BFLOAT16_H_

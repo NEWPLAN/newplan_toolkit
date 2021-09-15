@@ -1,27 +1,14 @@
-/* Copyright 2015 The TensorFlow Authors. All Rights Reserved.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-==============================================================================*/
-
-#ifndef TENSORFLOW_CORE_UTIL_COMMAND_LINE_FLAGS_H
-#define TENSORFLOW_CORE_UTIL_COMMAND_LINE_FLAGS_H
+#ifndef NEWPLAN_TOOLKIT_CORE_UTIL_COMMAND_LINE_FLAGS_H
+#define NEWPLAN_TOOLKIT_CORE_UTIL_COMMAND_LINE_FLAGS_H
 
 #include "types.h"
 #include <functional>
 #include <string>
 #include <vector>
 
-namespace tensorflow
+namespace newplan_toolkit
 {
     // N.B. This library is for INTERNAL use only.
     //
@@ -32,7 +19,7 @@ namespace tensorflow
     // int some_int = 10;
     // bool some_switch = false;
     // string some_name = "something";
-    // std::vector<tensorFlow::Flag> flag_list = {
+    // std::vector<newplan_toolkit::Flag> flag_list = {
     //   Flag("some_int", &some_int, "an integer that affects X"),
     //   Flag("some_switch", &some_switch, "a bool that affects Y"),
     //   Flag("some_name", &some_name, "a string that affects Z")
@@ -41,7 +28,7 @@ namespace tensorflow
     // string usage = Flag::Usage(argv[0], flag_list);
     // bool parsed_values_ok = Flags::Parse(&argc, argv, flag_list);
     //
-    // tensorflow::port::InitMain(usage.c_str(), &argc, &argv);
+    // newplan_toolkit::port::InitMain(usage.c_str(), &argc, &argv);
     // if (argc != 1 || !parsed_values_ok) {
     //    ...output usage and error message...
     // }
@@ -146,6 +133,6 @@ namespace tensorflow
                             const std::vector<Flag> &flag_list);
     };
 
-} // namespace tensorflow
+} // namespace newplan_toolkit
 
-#endif // TENSORFLOW_CORE_UTIL_COMMAND_LINE_FLAGS_H
+#endif // NEWPLAN_TOOLKIT_CORE_UTIL_COMMAND_LINE_FLAGS_H

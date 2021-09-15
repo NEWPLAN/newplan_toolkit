@@ -1,4 +1,4 @@
-/* Copyright 2018 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2018 The NEWPLAN_TOOLKIT Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#ifndef TENSORFLOW_CORE_PLATFORM_BYTE_ORDER_H_
-#define TENSORFLOW_CORE_PLATFORM_BYTE_ORDER_H_
+#ifndef NEWPLAN_TOOLKIT_CORE_PLATFORM_BYTE_ORDER_H_
+#define NEWPLAN_TOOLKIT_CORE_PLATFORM_BYTE_ORDER_H_
 
 // Byte order defines provided by gcc. MSVC doesn't define those so
 // we define them here.
@@ -25,7 +25,7 @@ limitations under the License.
 #define __BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__
 #endif
 
-namespace tensorflow
+namespace newplan_toolkit
 {
     namespace port
     {
@@ -33,6 +33,6 @@ namespace tensorflow
         constexpr bool kLittleEndian = __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__;
 
     } // namespace port
-} // namespace tensorflow
+} // namespace newplan_toolkit
 
-#endif // TENSORFLOW_CORE_PLATFORM_BYTE_ORDER_H_
+#endif // NEWPLAN_TOOLKIT_CORE_PLATFORM_BYTE_ORDER_H_

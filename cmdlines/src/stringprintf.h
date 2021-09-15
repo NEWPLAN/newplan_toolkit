@@ -1,17 +1,4 @@
-/* Copyright 2015 The TensorFlow Authors. All Rights Reserved.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-==============================================================================*/
 
 // Printf variants that place their output in a C++ string.
 //
@@ -19,8 +6,8 @@ limitations under the License.
 //      string result = strings::Printf("%d %s\n", 10, "hello");
 //      strings::Appendf(&result, "%d %s\n", 20, "there");
 
-#ifndef TENSORFLOW_CORE_PLATFORM_STRINGPRINTF_H_
-#define TENSORFLOW_CORE_PLATFORM_STRINGPRINTF_H_
+#ifndef NEWPLAN_TOOLKIT_CORE_PLATFORM_STRINGPRINTF_H_
+#define NEWPLAN_TOOLKIT_CORE_PLATFORM_STRINGPRINTF_H_
 
 #include <stdarg.h>
 
@@ -29,7 +16,7 @@ limitations under the License.
 #include "macros.h"
 #include "types.h"
 
-namespace tensorflow
+namespace newplan_toolkit
 {
     namespace strings
     {
@@ -47,7 +34,7 @@ namespace tensorflow
         // string.  All other routines are just convenience wrappers around it.
         extern void Appendv(std::string *dst, const char *format, va_list ap);
 
-    } // namespace strings
-} // namespace tensorflow
+    }; // namespace strings
+};     // namespace newplan_toolkit
 
-#endif // TENSORFLOW_CORE_PLATFORM_STRINGPRINTF_H_
+#endif // NEWPLAN_TOOLKIT_CORE_PLATFORM_STRINGPRINTF_H_

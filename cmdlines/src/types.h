@@ -1,20 +1,7 @@
-/* Copyright 2015 The TensorFlow Authors. All Rights Reserved.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-==============================================================================*/
-
-#ifndef TENSORFLOW_CORE_PLATFORM_TYPES_H_
-#define TENSORFLOW_CORE_PLATFORM_TYPES_H_
+#ifndef NEWPLAN_TOOLKIT_CORE_PLATFORM_TYPES_H_
+#define NEWPLAN_TOOLKIT_CORE_PLATFORM_TYPES_H_
 
 #include <string>
 
@@ -23,17 +10,15 @@ limitations under the License.
 #include "tstring.h"
 
 // Include appropriate platform-dependent implementations
-#if defined(PLATFORM_GOOGLE) || defined(GOOGLE_INTEGRAL_TYPES)
-#include "tensorflow/core/platform/google/integral_types.h"
-#elif defined(PLATFORM_POSIX) || defined(PLATFORM_POSIX_ANDROID) || defined(PLATFORM_GOOGLE_ANDROID) || defined(PLATFORM_POSIX_IOS) || defined(PLATFORM_GOOGLE_IOS) || defined(PLATFORM_WINDOWS)
+#if defined(PLATFORM_POSIX) || defined(PLATFORM_POSIX_ANDROID) || defined(PLATFORM_GOOGLE_ANDROID) || defined(PLATFORM_POSIX_IOS) || defined(PLATFORM_GOOGLE_IOS) || defined(PLATFORM_WINDOWS)
 #include "integral_types.h"
 #else
 #error Define the appropriate PLATFORM_<foo> macro for this platform
 #endif
 
-namespace tensorflow
+namespace newplan_toolkit
 {
-    // Alias tensorflow::string to std::string.
+    // Alias newplan_toolkit::string to std::string.
     using std::string;
 
     static const uint8 kuint8max = static_cast<uint8>(0xFF);
@@ -52,11 +37,11 @@ namespace tensorflow
     // A typedef for a uint64 used as a short fingerprint.
     typedef uint64 Fprint;
 
-} // namespace tensorflow
+} // namespace newplan_toolkit
 
 #if defined(PLATFORM_WINDOWS)
 #include <cstddef>
 typedef std::ptrdiff_t ssize_t;
 #endif
 
-#endif // TENSORFLOW_CORE_PLATFORM_TYPES_H_
+#endif // NEWPLAN_TOOLKIT_CORE_PLATFORM_TYPES_H_

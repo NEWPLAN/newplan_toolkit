@@ -1,4 +1,4 @@
-/* Copyright 2015 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2015 The NEWPLAN_TOOLKIT Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ limitations under the License.
 #include "glog/logging.h"
 #include "command_line_flags.h"
 
-namespace tensorflow
+namespace newplan_toolkit
 {
     namespace
     {
-        bool ParseStringFlag(tensorflow::StringPiece arg, tensorflow::StringPiece flag,
+        bool ParseStringFlag(newplan_toolkit::StringPiece arg, newplan_toolkit::StringPiece flag,
                              const std::function<bool(string)> &hook,
                              bool *value_parsing_ok)
         {
@@ -42,7 +42,7 @@ namespace tensorflow
             return false;
         }
 
-        bool ParseInt32Flag(tensorflow::StringPiece arg, tensorflow::StringPiece flag,
+        bool ParseInt32Flag(newplan_toolkit::StringPiece arg, newplan_toolkit::StringPiece flag,
                             const std::function<bool(int32)> &hook,
                             bool *value_parsing_ok)
         {
@@ -67,7 +67,7 @@ namespace tensorflow
             return false;
         }
 
-        bool ParseInt64Flag(tensorflow::StringPiece arg, tensorflow::StringPiece flag,
+        bool ParseInt64Flag(newplan_toolkit::StringPiece arg, newplan_toolkit::StringPiece flag,
                             const std::function<bool(int64)> &hook,
                             bool *value_parsing_ok)
         {
@@ -92,7 +92,7 @@ namespace tensorflow
             return false;
         }
 
-        bool ParseBoolFlag(tensorflow::StringPiece arg, tensorflow::StringPiece flag,
+        bool ParseBoolFlag(newplan_toolkit::StringPiece arg, newplan_toolkit::StringPiece flag,
                            const std::function<bool(bool)> &hook,
                            bool *value_parsing_ok)
         {
@@ -127,7 +127,7 @@ namespace tensorflow
             return false;
         }
 
-        bool ParseFloatFlag(tensorflow::StringPiece arg, tensorflow::StringPiece flag,
+        bool ParseFloatFlag(newplan_toolkit::StringPiece arg, newplan_toolkit::StringPiece flag,
                             const std::function<bool(float)> &hook,
                             bool *value_parsing_ok)
         {
@@ -154,7 +154,7 @@ namespace tensorflow
 
     } // namespace
 
-    Flag::Flag(const char *name, tensorflow::int32 *dst, const string &usage_text,
+    Flag::Flag(const char *name, newplan_toolkit::int32 *dst, const string &usage_text,
                bool *dst_updated) :
         name_(name),
         type_(TYPE_INT32),
@@ -169,7 +169,7 @@ namespace tensorflow
     {
     }
 
-    Flag::Flag(const char *name, tensorflow::int64 *dst, const string &usage_text,
+    Flag::Flag(const char *name, newplan_toolkit::int64 *dst, const string &usage_text,
                bool *dst_updated) :
         name_(name),
         type_(TYPE_INT64),
@@ -411,4 +411,4 @@ namespace tensorflow
         return usage_text;
     }
 
-} // namespace tensorflow
+} // namespace newplan_toolkit

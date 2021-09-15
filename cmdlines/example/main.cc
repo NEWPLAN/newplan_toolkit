@@ -87,62 +87,62 @@ struct AutoParallelOption //
 static AutoParallelOption get_options(int argc, char **argv)
 {
     AutoParallelOption opts;
-    std::vector<tensorflow::Flag> flag_list = {
-        tensorflow::Flag("print_literals", &opts.print_literals,
-                         "Print the input and result literals to stdout."),
+    std::vector<newplan_toolkit::Flag> flag_list = {
+        newplan_toolkit::Flag("print_literals", &opts.print_literals,
+                              "Print the input and result literals to stdout."),
 
-        tensorflow::Flag(
+        newplan_toolkit::Flag(
             "use_large_float_range", &opts.use_large_float_range,
             "Generate floating point values using a large uniform-log "
             "distribution as opposed to a small uniform distribution."),
-        tensorflow::Flag(
+        newplan_toolkit::Flag(
             "abs_error_bound", &opts.abs_error_bound,
             "The absolute error bound used when comparing the test and "
             "reference results."),
-        tensorflow::Flag(
+        newplan_toolkit::Flag(
             "rel_error_bound", &opts.rel_error_bound,
             "The relative error bound used when comparing the test and "
             "reference results."),
-        tensorflow::Flag("input_format", &opts.input_format,
-                         "The format of the input file. Valid values:\n"
-                         "  hlo : HLO textual format\n"
-                         "  pb : xla::HloProto in binary proto format\n"
-                         "  pbtxt : xla::HloProto in text proto format"),
-        tensorflow::Flag(
+        newplan_toolkit::Flag("input_format", &opts.input_format,
+                              "The format of the input file. Valid values:\n"
+                              "  hlo : HLO textual format\n"
+                              "  pb : xla::HloProto in binary proto format\n"
+                              "  pbtxt : xla::HloProto in text proto format"),
+        newplan_toolkit::Flag(
             "input_text", &opts.input_text,
             "A path to a file containing the HLO module. Can also pass "
             "a this as argv[1], but this flag is more explicit."),
-        tensorflow::Flag(
+        newplan_toolkit::Flag(
             "iterations", &opts.iterations,
             "The number of times to run the module. Each iteration will be run "
             "with different input data."),
-        tensorflow::Flag("print_hlo", &opts.print_hlo,
-                         "decide whether print the hlo ir or not"),
-        tensorflow::Flag(
+        newplan_toolkit::Flag("print_hlo", &opts.print_hlo,
+                              "decide whether print the hlo ir or not"),
+        newplan_toolkit::Flag(
             "num_partitions", &opts.num_partitions,
             "decide how many partitions to used in model paralleism"),
 
-        tensorflow::Flag("num_replicas", &opts.num_replicas,
-                         "decide how many replicas to used in data paralleism"),
-        tensorflow::Flag("execute_shared", &opts.execute_shared,
-                         "decide whether using executable shared"),
-        tensorflow::Flag("enable_spmd_pass", &opts.enable_spmd_pass,
-                         "decide whether enable spmd pass"),
-        tensorflow::Flag(
+        newplan_toolkit::Flag("num_replicas", &opts.num_replicas,
+                              "decide how many replicas to used in data paralleism"),
+        newplan_toolkit::Flag("execute_shared", &opts.execute_shared,
+                              "decide whether using executable shared"),
+        newplan_toolkit::Flag("enable_spmd_pass", &opts.enable_spmd_pass,
+                              "decide whether enable spmd pass"),
+        newplan_toolkit::Flag(
             "policy_config", &opts.policy_config,
             "A path to a file containing the split policy for a input_text."),
 
-        tensorflow::Flag("pp_stage_size", &opts.pp_stage_size,
-                         "the size of pp stage"),
-        tensorflow::Flag("unified_literal", &opts.unified_literal,
-                         "use unified_literal for input"),
-        tensorflow::Flag("print_input", &opts.print_input,
-                         "print the input literals"),
-        tensorflow::Flag("print_output", &opts.print_output,
-                         "print the output literals"),
-        tensorflow::Flag("rank_info", &opts.rank_info,
-                         "Speficy the rank info in format of "
-                         "pp_id_0:pp_0_size [,pp_id_i:pp_i_size,...]")
+        newplan_toolkit::Flag("pp_stage_size", &opts.pp_stage_size,
+                              "the size of pp stage"),
+        newplan_toolkit::Flag("unified_literal", &opts.unified_literal,
+                              "use unified_literal for input"),
+        newplan_toolkit::Flag("print_input", &opts.print_input,
+                              "print the input literals"),
+        newplan_toolkit::Flag("print_output", &opts.print_output,
+                              "print the output literals"),
+        newplan_toolkit::Flag("rank_info", &opts.rank_info,
+                              "Speficy the rank info in format of "
+                              "pp_id_0:pp_0_size [,pp_id_i:pp_i_size,...]")
 
     };
 
@@ -150,11 +150,11 @@ static AutoParallelOption get_options(int argc, char **argv)
     // The usage string includes the message at the top of the file, the
     // DebugOptions flags and the flags defined above.
 
-    bool parse_ok = tensorflow::Flags::Parse(&argc, argv, flag_list);
-    //tensorflow::port::InitMain("", &argc, &argv);
+    bool parse_ok = newplan_toolkit::Flags::Parse(&argc, argv, flag_list);
+    //newplan_toolkit::port::InitMain("", &argc, &argv);
     if (!parse_ok)
     {
-        VLOG(0) << tensorflow::Flags::Usage(argv[0], flag_list);
+        VLOG(0) << newplan_toolkit::Flags::Usage(argv[0], flag_list);
         LOG(FATAL) << "cannot parse cmd data";
     }
 
@@ -166,7 +166,7 @@ static AutoParallelOption get_options(int argc, char **argv)
 int main(int argc, char **argv)
 {
     auto opts = get_options(argc, argv);
-    std::vector<std::string> rank_info = tensorflow::str_util::Split(opts.rank_info, ',');
+    std::vector<std::string> rank_info = newplan_toolkit::str_util::Split(opts.rank_info, ',');
     VLOG(0) << opts.rank_info << " = [" << absl::StrJoin(rank_info, ";") + "]";
 
     return 0;

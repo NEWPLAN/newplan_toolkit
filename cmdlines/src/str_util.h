@@ -109,6 +109,8 @@ namespace newplan_toolkit
         {
             bool operator()(StringPiece sp) const
             {
+                if (sp == "")
+                    return true;
                 return true;
             }
         };
@@ -116,6 +118,8 @@ namespace newplan_toolkit
         {
             bool operator()(StringPiece sp) const
             {
+                if (sp == "")
+                    return true;
                 return !sp.empty();
             }
         };

@@ -16,7 +16,7 @@ struct AutoParallelOption //
     int iterations = 1;
     bool print_hlo = false;
     int num_replicas = 1;
-    int pp_stage_size = 4;
+    int pp_stage_size = 0;
     bool execute_shared = false;
     bool enable_spmd_pass = false;
     bool print_literals = false;
@@ -168,6 +168,11 @@ int main(int argc, char **argv)
     auto opts = get_options(argc, argv);
     std::vector<std::string> rank_info = newplan_toolkit::str_util::Split(opts.rank_info, ',');
     VLOG(0) << opts.rank_info << " = [" << absl::StrJoin(rank_info, ";") + "]";
+    VLOG(0) << "use_large_float_range = " << opts.use_large_float_range;
+    VLOG(0) << "num_partitions = " << opts.num_partitions;
+    VLOG(0) << "pp_stage_size = " << opts.pp_stage_size;
+    VLOG(0) << "unified_literal = " << opts.unified_literal;
+    VLOG(0) << "input_text = " << opts.input_text;
 
     return 0;
 }

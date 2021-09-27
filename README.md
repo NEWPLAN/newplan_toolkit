@@ -1,10 +1,12 @@
 # newplan_toolkit
 collections of toolkits
 
+- **```cmdlines```**: a customized parsers to get arguments cmd lines, find more at [README](cmdlines)
 - **```logger```**: a customized logger, find more at [README](logger)
 - **```net```**: operation on network(e.g., setqos,socket_setopt, etc.), find more at [README](net)
-- **```timer```**: time event & time recorder, find more at [README](timer)
 - **```queue```**: SPSCQueue/BlockingQueue/MPMCQueue, etc., find more at [README](queue)
+- **```thread```**: thread related utils(threadpool/threadperf), find more at [README](thread)
+- **```timer```**: time event & time recorder, find more at [README](timer)
 
 
 

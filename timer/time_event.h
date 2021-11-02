@@ -15,7 +15,7 @@
 #include <set>
 #include <thread>
 
-namespace newplan
+namespace newplan_toolkit
 {
     class ManualEvent
     {

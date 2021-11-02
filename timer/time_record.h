@@ -3,7 +3,7 @@
 #include <chrono>
 #include <iostream>
 
-namespace newplan
+namespace newplan_toolkit
 {
     class Timer
     {

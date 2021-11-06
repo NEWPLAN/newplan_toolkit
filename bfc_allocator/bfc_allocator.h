@@ -11,6 +11,7 @@
 #include <unordered_map>
 #include <cassert>
 #include <iostream>
+#include <cmath>
 
 #define ASSERT(condition)                                    \
     if (!(condition))                                        \
@@ -191,7 +192,8 @@ namespace memory
             {
                 peakAllocated_.store(currAllocated_.load());
             }
-            allocatedMap_.emplace(ptr, nbytes);
+            // allocatedMap_.emplace(ptr, nbytes);
+            allocatedMap_[ptr] = nbytes;
             return ptr;
         }
 

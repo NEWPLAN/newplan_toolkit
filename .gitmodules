@@ -1,3 +1,6 @@
 [submodule "cmdlines/abseil-cpp"]
 	path = cmdlines/abseil-cpp
 	url = https://github.com/abseil/abseil-cpp
+[submodule "backtrace/3rd_party/3rd_party/backward"]
+	path = backtrace/3rd_party/3rd_party/backward
+	url = https://github.com/bombela/backward-cpp

@@ -46,9 +46,9 @@ Registering backtrace service successful
 =========== show_stack_snapshot_at_runtime===========
 Stack trace (most recent call last):
 #7    Object "", at 0xffffffffffffffff, in
-#6    Object "/home/nasp_admin/test/FastPS/backtrace_benchmark", at 0x5568e64a38d9, in _start
+#6    Object "backtrace_benchmark", at 0x5568e64a38d9, in _start
 #5    Source "/build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c", line 310, in __libc_start_main
-#4    Source "/home/nasp_admin/test/FastPS/example/backward_test.cc", line 18, in main
+#4    Source "example/backward_test.cc", line 18, in main
          15: }; // namespace
          16: int main(void)
          17: {
@@ -56,7 +56,7 @@ Stack trace (most recent call last):
          19:     show_exception();
          20:     return 0;
          21: }
-#3    Source "/home/nasp_admin/test/FastPS/example/backward_test.cc", line 8, in (anonymous namespace)::show_stack_snapshot_at_runtime()
+#3    Source "example/backward_test.cc", line 8, in (anonymous namespace)::show_stack_snapshot_at_runtime()
           5:     void show_stack_snapshot_at_runtime()
           6:     {
           7:         std::cout << "=========== show_stack_snapshot_at_runtime===========" << std::endl;
@@ -64,7 +64,7 @@ Stack trace (most recent call last):
           9:     }
          10:     void show_exception()
          11:     {
-#2    Source "/home/nasp_admin/test/FastPS/example/../backtrace_service.h", line 23, in newplan_toolkit::BackTraceService::show_stack_snapshot()
+#2    Source "example/../backtrace_service.h", line 23, in newplan_toolkit::BackTraceService::show_stack_snapshot()
          20:         static void show_stack_snapshot()
          21:         {
          22:             backward::StackTrace st;
@@ -72,7 +72,7 @@ Stack trace (most recent call last):
          24:             backward::Printer p;
          25:             p.print(st);
          26:         }
-#1    Source "/home/nasp_admin/test/FastPS/example/../3rd_party/backward/backward.hpp", line 869, in backward::StackTraceImpl<backward::system_tag::linux_tag>::load_here(unsigned long, void*, void*)
+#1    Source "example/../3rd_party/backward/backward.hpp", line 869, in backward::StackTraceImpl<backward::system_tag::linux_tag>::load_here(unsigned long, void*, void*)
         866:       return 0;
         867:     }
         868:     _stacktrace.resize(depth);
@@ -80,7 +80,7 @@ Stack trace (most recent call last):
         870:     _stacktrace.resize(trace_cnt);
         871:     skip_n_firsts(0);
         872:     return size();
-#0    Source "/home/nasp_admin/test/FastPS/example/../3rd_party/backward/backward.hpp", line 851, in unsigned long backward::details::unwind<backward::StackTraceImpl<backward::system_tag::linux_tag>::callback>(backward::StackTraceImpl<backward::system_tag::linux_tag>::callback, unsigned long)
+#0    Source "example/../3rd_party/backward/backward.hpp", line 851, in unsigned long backward::details::unwind<backward::StackTraceImpl<backward::system_tag::linux_tag>::callback>(backward::StackTraceImpl<backward::system_tag::linux_tag>::callback, unsigned long)
         849: template <typename F> size_t unwind(F f, size_t depth) {
         850:   Unwinder<F> unwinder;
       > 851:   return unwinder(f, depth);
@@ -91,16 +91,16 @@ Stack trace (most recent call last):
 terminate called after throwing an instance of 'char const*'
 Stack trace (most recent call last):
 #11   Object "", at 0xffffffffffffffff, in
-#10   Object "/home/nasp_admin/test/FastPS/backtrace_benchmark", at 0x5568e64a38d9, in _start
+#10   Object "backtrace_benchmark", at 0x5568e64a38d9, in _start
 #9    Source "/build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c", line 310, in __libc_start_main [0x7ff391249bf6]
-#8    Source "/home/nasp_admin/test/FastPS/example/backward_test.cc", line 19, in main [0x5568e64a3a7b]
+#8    Source "example/backward_test.cc", line 19, in main [0x5568e64a3a7b]
          16: int main(void)
          17: {
          18:     show_stack_snapshot_at_runtime();
       >  19:     show_exception();
          20:     return 0;
          21: }
-#7    Source "/home/nasp_admin/test/FastPS/example/backward_test.cc", line 13, in (anonymous namespace)::show_exception() [0x5568e64a3a6a]
+#7    Source "example/backward_test.cc", line 13, in (anonymous namespace)::show_exception() [0x5568e64a3a6a]
          10:     void show_exception()
          11:     {
          12:         std::cout << "===========show_exception===========" << std::endl;
@@ -108,7 +108,7 @@ Stack trace (most recent call last):
          14:     }
          15: }; // namespace
          16: int main(void)
-#6    Source "/home/nasp_admin/test/FastPS/example/../backtrace_service.h", line 73, in newplan_toolkit::execption_test(int, int) [0x5568e64a39f5]
+#6    Source "example/../backtrace_service.h", line 73, in newplan_toolkit::execption_test(int, int) [0x5568e64a39f5]
          70:     {
          71:         if (b == 0)
          72:         {

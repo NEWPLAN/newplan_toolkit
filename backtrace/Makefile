@@ -14,7 +14,6 @@ CXX_COMPILER = g++
 BFD_FLAGS_DETECTED = -lbfd
 
 ifeq ($(OS),Windows_NT)
-	@echo "detected on windows platform"
     # CCFLAGS += -D WIN32
     # ifeq ($(PROCESSOR_ARCHITEW6432),AMD64)
     #     CCFLAGS += -D AMD64

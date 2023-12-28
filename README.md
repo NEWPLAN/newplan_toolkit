@@ -10,6 +10,8 @@ collections of toolkits
 - **```thread```**: thread related utils(threadpool/threadperf), find more at [README](thread)
 - **```timer```**: time event & time recorder, find more at [README](timer)
 
+## Other Reference
+- **```black_tech```**: https://github.com/NEWPLAN/black_tech
 
 
 <!-- 

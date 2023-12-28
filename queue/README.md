@@ -27,3 +27,7 @@
         } while (recv_ptr == nullptr); 
         spsc_q->pop();
         ```
+
+## Other Useful Implementations
+ - *readerwriterqueue* : single-produce-single-consumer queue, https://github.com/cameron314/readerwriterqueue
+ - *concurrentqueue* : multiple-produce-multiple-consumer queue, https://github.com/cameron314/concurrentqueue

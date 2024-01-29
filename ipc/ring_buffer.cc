@@ -32,7 +32,7 @@ using namespace wilt;
 #include <cstring>
 // - std::memcpy
 
-Ring_::Ring_() : beg_(nullptr), end_(nullptr) {
+Ring_::Ring_() : beg_(nullptr), end_(nullptr), placeholder_(nullptr) {
   std::atomic_init(&used_, static_cast<std::ptrdiff_t>(0));
   std::atomic_init(&free_, static_cast<std::ptrdiff_t>(0));
   std::atomic_init(&rbuf_, static_cast<char *>(0));
@@ -61,7 +61,8 @@ Ring_::Ring_(std::size_t size, void *placeholder)
   std::atomic_init(&wbuf_, beg_);
 }
 
-Ring_::Ring_(Ring_ &&ring) : beg_(ring.beg_), end_(ring.end_) {
+Ring_::Ring_(Ring_ &&ring)
+    : beg_(ring.beg_), end_(ring.end_), placeholder_(ring.placeholder_) {
   std::atomic_init(&used_, ring.used_.load());
   std::atomic_init(&free_, ring.free_.load());
   std::atomic_init(&rbuf_, ring.rbuf_.load());
@@ -71,6 +72,7 @@ Ring_::Ring_(Ring_ &&ring) : beg_(ring.beg_), end_(ring.end_) {
 
   ring.beg_ = nullptr;
   ring.end_ = nullptr;
+  ring.placeholder_ = nullptr;
 
   ring.used_.store(0);
   ring.free_.store(0);
@@ -97,6 +99,7 @@ Ring_ &Ring_::operator=(Ring_ &&ring) {
 
   ring.beg_ = nullptr;
   ring.end_ = nullptr;
+  ring.placeholder_ = nullptr;
 
   ring.used_.store(0);
   ring.free_.store(0);

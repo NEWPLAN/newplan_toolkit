@@ -12,6 +12,7 @@ collections of toolkits
 
 ## Other Reference
 - **```black_tech```**: https://github.com/NEWPLAN/black_tech
+- **```pythonic```**: https://www.codenong.com/24881799  https://github.com/ignatz/pythonic/tree/master/pythonic
 
 
 <!-- 
